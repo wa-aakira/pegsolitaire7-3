@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ja">
+<!--Copyright (c)  2016 ask5
+Released under the MIT license
+http://opensource.org/licenses/mit-license.php  -->
+
+<head>
+    <meta charset="utf-8">
+    <title>PegSolitaire</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="dist/main.min.css">
+</head>
+
+<body>
+    <div id="container">
+        <h1>ペグソリティア問題7-3</h1>
+        <div class="menu">
+            <select id="patterns" onchange="change_pattern();"></select>
+            <span class="item" id="start_timer" onclick="start_timer();">start timer</span> |
+            <span class="item" id="stop_timer" onclick="stop_timer();">stop timer</span> |
+            <span class="item disabled" id="undo" onclick="undo();">undo</span> |
+            <span class="item" id="reset" onclick="reset();">reset</span> |
+            <span class="item" id="replay" onclick="replay();">replay</span> | 
+            <span class="item" onclick="show_rules();">rules</span> |
+            
+            <span class="item" onclick="show_answers();">answers</span> |            
+           
+            <span class="item" id="timer"></span>
+        </div>
+        <div id="main-section" >
+            <div id="board-container"></div>
+            <div id="rules" class="hide" onclick="hide_rules();">
+                <span onclick="hide_rules();">X</span>
+                <p>
+                    <h2>Rules</h2>
+                    詳細については、次のWebサイトをご覧ください<a href="https://en.wikipedia.org/wiki/Peg_solitaire" target="_blank">this wiki page</a>.
+                </p>
+                <img src="5-1.png" alt="" width="250px"height="250px">
+                <img src="to.png" alt="" width="250px"height="250px">
+                <ol>
+                    <h3>ペグソリティア問題集の使用方法</h3>
+                    <h4>ゲームの遊び方</h4> 
+                    問題の番号（5-1）を開いてください  
+                    
+                    <li>位置36のペグを位置34にジャンプして、移動します </li>	
+<li>位置35のペグを取り外します。ジャンプすると、ペグを取り外すことができます</li>	
+<li>ペグを位置44から位置24に移動します</li>	
+<li> 位置34のペグを取り外します</li>	
+<li> 位置32のペグを位置34に移動し、位置24のペグを位置44に移動します... </li>	
+<li> 中央の44の位置にペグが1つだけ残りました 	
+    ペグは上下左右にしか動かすことはできません、斜めに移動できません                       	
+</li>	
+<li>★--★★--★★★	
+          難しい問題にはスター印を付けました、これらの問題には答えがあります</li>	
+<li>すべての問題において、ゲーム終了時にはボードに残っているペグの数は必ず1つだけです</li>	
+<li>しかも常に中央の44番目の位置に残ります</li>	
+<li>問題12-8、13-11、14-18、18-4、20-3これは特に難しい問題なので、複数の回答を投稿しました</li>	
+<li style="list-style:non">                   	
+    私はペグソリテールが大好きです	
+    ぜひ皆さんも挑戦してください 	
+    楽しんでほしいです	
+</li>	
+                   
+
+                </ol>
+            </div> 
+            <div id="board-container"></div>
+
+            <div id="answers" class="hide" onclick="hide_answers();">
+                <span onclick="hide_answers();">X</span>
+                <ul >
+                  
+                    <li style="list-style: none">Ansers</li> 
+                    <li style="list-style: none">                    
+                        ★--★★--★★★ 難しい問題にはスター印を付けました、これらの問題には答えがあります</li>
+                     <li>すべての問題において、ゲーム終了時にはボードに残っているペグの数は必ず1つだけです</li>
+                     <li>しかも常に中央の44番目の位置に残ります</li>
+                     <li style="list-style: non">                   
+                     私はペグソリテールが大好きです
+                     ぜひ皆さんも挑戦してください 
+                     楽しんでほしいです
+                     </li>     
+
+                   <li style="list-style:none"></li>
+
+            <li>7-1 = 44to24; 33to53; 41to43; 53to33; 32to34; 24to44</li>
+            <li>7-2 = 33to53; 34to54; 53to55; 55to35; 36to34; 24to44</li>
+            <li>7-5 = 44to64; 52to54; 64to44; 44to42; 23to43; 42to44</li>
+            <li>7-10 = 54to56; 35to55; 74to54; 44to64; 56to54; 64to44</li>
+            <li>7-11 = 23to43; 44to42; 35to33; 25to23; 23to43; 42to44</li>
+            <li>7-12 = 35to33; 54to34; 34to32; 53to33; 32to34; 24to44</li>
+            <li>7-13 = 33to53; 53to55; 55to35; 35to33; 23to43; 42to44</li>
+            <li>7-17 = 31to33; 42to43; 34to32; 53to33; 32to34; 24to44</li>
+           
+
+
+
+            </ul>
+            </div>
+        </div>
+        <div id="info-section">
+            <div id="log-container">
+                <ol id="log">
+                </ol>
+            </div>
+        </div>
+    </div>
+    <script src="dist/solitaire.js"></script>
+</body>
+
+</html>
